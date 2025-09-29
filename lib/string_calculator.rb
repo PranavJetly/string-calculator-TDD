@@ -1,5 +1,7 @@
+require 'pry'
+
 class StringCalculator
   def self.add(numbers)
-    0
+    return 0 if numbers == ""
   end
 end
