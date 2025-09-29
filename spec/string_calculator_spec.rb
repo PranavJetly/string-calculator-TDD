@@ -21,5 +21,10 @@ RSpec.describe StringCalculator do
     it "returns sum of numbers in strings with '\n'" do
       expect(StringCalculator.add("1\n2,3")).to eq(6)
     end
+
+    it "returns sum of numbers in strings with any delimiter given at the starting of string" do
+      expect(StringCalculator.add("//;\n1;2;7")).to eq(10)
+      expect(StringCalculator.add("//&\n1&2&7")).to eq(10)
+    end
   end
 end
