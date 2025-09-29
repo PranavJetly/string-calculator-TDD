@@ -7,7 +7,7 @@ RSpec.describe StringCalculator do
     end
 
     it 'returns number for string' do
-      expect(StringCalculator.add("1")).to eq(0)
+      expect(StringCalculator.add("1")).to eq(1)
     end
   end
 end
