@@ -26,5 +26,9 @@ RSpec.describe StringCalculator do
       expect(StringCalculator.add("//;\n1;2;7")).to eq(10)
       expect(StringCalculator.add("//&\n1&2&7")).to eq(10)
     end
+    it "returns sum of numbers in strings with any delimiter of any length given at the starting of string" do
+      expect(StringCalculator.add("//de\n1de2de7")).to eq(10)
+      expect(StringCalculator.add("//&@$\n1&@$2&@$7")).to eq(10)
+    end
   end
 end
