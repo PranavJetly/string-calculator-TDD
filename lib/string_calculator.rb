@@ -11,9 +11,10 @@ class StringCalculator
       delimiter = delimiter_line[2..-1]
       removeline = "" #make removeline empty if string starts with '//''
     end
-
     numbers.gsub!("\n", removeline)
     chars = numbers.split(delimiter)
+    negatives = chars.select { |ch| ch.to_i < 0 }
+    raise "negative numbers not allowed #{negatives.join(",")}" unless negatives.empty?  
     chars.reduce(0){|sum,ch| sum+ch.to_i}
   end
 end
