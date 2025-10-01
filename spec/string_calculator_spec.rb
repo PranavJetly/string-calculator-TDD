@@ -30,5 +30,14 @@ RSpec.describe StringCalculator do
       expect(StringCalculator.add("//de\n1de2de7")).to eq(10)
       expect(StringCalculator.add("//&@$\n1&@$2&@$7")).to eq(10)
     end
+
+    it "raises an error when a single negative number is present" do
+      expect { StringCalculator.add("1,-2,3") }.to raise_error("negative numbers not allowed -2")
+    end
+
+    it "raises an error with all negative numbers listed when multiple are present" do
+      expect { StringCalculator.add("1,-2,-5,3") }.to raise_error("negative numbers not allowed -2,-5")
+    end
+
   end
 end
